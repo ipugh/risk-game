@@ -1,23 +1,85 @@
-p {
-    font-size: 100px;
+* {
+    box-sizing: border-box;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50px 1fr 3fr 2fr;
+    grid-template-areas:
+        " header header header header"
+        " sidebar sidebar sidebar sidebar"
+        " map map game game"
+        " footer footer footer footer";
+    color: #0984e3;
+    background-color: #0984e3;
+
 }
 
 h1 {
+    grid-area: header;
     text-align: center;
     text-shadow: gray 1.2px 1.2px 5px;
     letter-spacing: 5px;
-    background-color: cyan;
+    background-color: #b2bec3;
     margin-top: 0px;
     margin-bottom: 10px;
+    color: #2d3436;
 }
 
-div.HowToPlay {
+.map {
+    grid-area: map;
+    align-content: center;
+    color: #2d3436;
+    background-color: #00cec9;
     margin: 20px;
-    border: 4px solid blue;
-    background-color: slategray;
-    text-align: center;
+    width: 90%;
+    padding: 1em 1em 1em 1em;
 }
 
-div.HowToPlay > body {
+.gameControls {
+    grid-area: game;
+    color: #2d3436;
+    background-color: #fd79a8;
+    width: 90%;
+    margin: 20px;
+    padding: 1em 1em 1em 1em;
+}
+
+.landing {
+    width: 90%;
+    background-color: #d63031;
+    align-self: center;
+    color: #dfe6e9;
+    padding: 1em 1em 1em 1em;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #333;
+    border-radius: 5%;
+}
+
+.landing:active {
+    opacity: 100%;
+}
+
+.HowToPlay {
+    grid-area: sidebar;
+    margin: 20px;
+    border: 4px solid #b2bec3;
+    background-color: #2d3436;
+    text-align: center;
+    color: #b2bec3;
+}
+
+.HowToPlay > body {
     font-size: 12px;
+    color: #fdcb6e;
+}
+
+footer {
+    grid-area: footer;
+    color: #2d3436;
+    background-color: #b2bec3;
 }
