@@ -2,6 +2,15 @@ p {
     font-size: 100px;
 }
 
+h1 {
+    text-align: center;
+    text-shadow: gray 1.2px 1.2px 5px;
+    letter-spacing: 5px;
+    background-color: cyan;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
 div.HowToPlay {
     margin: 20px;
     border: 4px solid blue;
