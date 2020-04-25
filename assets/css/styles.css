@@ -1,3 +1,14 @@
 p {
     font-size: 100px;
 }
+
+div.HowToPlay {
+    margin: 20px;
+    border: 4px solid blue;
+    background-color: slategray;
+    text-align: center;
+}
+
+div.HowToPlay > body {
+    font-size: 12px;
+}
