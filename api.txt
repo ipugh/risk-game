@@ -1,0 +1,52 @@
+API calls
+
+# for attacking during turn
+/attack POST
+from: string (territory id)
+to: string (territory id)
+RETURN
+troops remaining
+
+
+# for reinforcing at beginning of turn
+/reinforce POST
+territory: string (territory id)
+quantity: number
+RETURN
+reinforcements_left
+success
+
+
+# for regrouping at end of turn
+/regroup POST
+from: string (territory id)
+to: string (territory id)
+quantity (territory id)
+RETURN
+success
+
+
+# for getting the game board
+/board GET
+RETURN
+board[]:
+    territory{}:
+        player: string
+        armies: number
+        territory_id: string
+    turn: string
+
+
+# for picking a territory during initial setup
+/pick POST
+territory: string (territory id)
+RETURN
+success
+
+
+# for reinforcing a territory during inital setup
+/pickreinforce
+territory: string (territory id)
+RETURN
+success
+
