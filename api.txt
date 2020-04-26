@@ -35,6 +35,8 @@ board[]:
         armies: number
         territory_id: string
     turn: string
+    gamestate: string
+    turnstate: string
 
 
 # for picking a territory during initial setup
