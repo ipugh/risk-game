@@ -5,12 +5,13 @@
 
 main {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 75px 1fr 3.5fr .3fr;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 75px 1fr 1.6fr .5fr .3fr;
     grid-template-areas:
         " header header  header"
         " sidebar sidebar sidebar"
         " . game ."
+        ". controls ."
         " footer footer footer";
     color: #0984e3;
     background-color: #0984e3;
@@ -32,7 +33,14 @@ h1 {
     grid-area: game;
     align-content: center;
     color: #2d3436;
-    margin: 20px;
+    width: 100%;
+    padding: 1em 1em 1em 1em;
+}
+
+.Controls {
+    grid-area: controls;
+    align-content: center;
+    color: #2d3436;
     width: 100%;
     padding: 1em 1em 1em 1em;
 }
