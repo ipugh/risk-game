@@ -40,3 +40,10 @@ type Pick struct {
 type PickReinforce struct {
     TerritoryId int `json:"territoryid"`
 }
+
+// attack POST
+type Attack struct {
+    From int `json:"from"`
+    To int `json:"to"`
+}
+

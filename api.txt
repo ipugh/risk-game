@@ -5,7 +5,7 @@ API calls
 from: number (territory id)
 to: number (territory id)
 RETURN
-troops remaining
+remaining - troops remaining
 
 
 # for reinforcing at beginning of turn
@@ -13,7 +13,7 @@ troops remaining
 territoryid: number (territory id)
 armies: number
 RETURN
-reinforcements_left
+remaining - toops remaining
 success
 
 
@@ -29,11 +29,12 @@ success
 # for getting the game board
 /board GET
 RETURN
-board[]:
-    territory{}:
-        player: string
-        armies: number
-        territoryid: number
+gameboard:
+    board[]:
+        territory{}:
+            player: string
+            armies: number
+            territoryid: number
     turn: string
     gamestate: string
     turnstate: string
