@@ -1,7 +1,5 @@
 package main
 
-// TODO: each api call has lots of similar code, make it more generic
-
 import (
     "github.com/gin-gonic/gin"
     "github.com/gin-contrib/static"
@@ -104,8 +102,6 @@ func main() {
     // thanks to gin for not supporting advanced enough routing to do this
     // r.Static("/", "./assets")
     r.Use(static.Serve("/", static.LocalFile("./assets", true)))
-    //r.Use(static.Serve("/css/styles.css", static.LocalFile("./assets/css/styles.css", true)))
-
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
