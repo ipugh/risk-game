@@ -10,9 +10,18 @@
     <script src="js/game.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="risk.ico" />
     <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Alegreya SC';
+            font-size: 22px;
+        }
+
+    </style>
 </head>
 <main>
-    <a href="" class="landing"> Play Risk!</a>
+    <!--<a href="" class="landing"> Play Risk!</a> -->
+
     <h1>Welcome to Risk!</h1>
     <div class="HowToPlay">
         <h2>How To Play</h2>
@@ -22,14 +31,18 @@
             <ul> Insert rules here</ul>
         </body>
     </div>
-    <div class="Map">
-        <h3>Map </h3>
+
+
+
+    <div class="Game">
+        <canvas id="myCanvas" width="650" height="400" style="border:1px solid #000000;">
+        </canvas>
     </div>
-    <div class="GameControls">
-        <h3>Buttons</h3>
-    </div>
-    <footer> A Simulation Game Created by Isaac Pugh and Ian Cook.
-        venmo us at @ipugh and @Icook614 </footer>
+
+    <footer>
+        <p>A Simulation Game Created by Isaac Pugh and Ian Cook.
+            venmo us at @ipugh and @Icook614 </p>
+    </footer>
 </main>
 
 </html>

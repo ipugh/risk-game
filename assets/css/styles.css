@@ -5,13 +5,13 @@
 
 main {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50px 1fr 3fr 2fr;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 75px 1fr 3.5fr .3fr;
     grid-template-areas:
-        " header header header header"
-        " sidebar sidebar sidebar sidebar"
-        " map map game game"
-        " footer footer footer footer";
+        " header header  header"
+        " sidebar sidebar sidebar"
+        " . game ."
+        " footer footer footer";
     color: #0984e3;
     background-color: #0984e3;
 
@@ -28,25 +28,16 @@ h1 {
     color: #2d3436;
 }
 
-.map {
-    grid-area: map;
+.Game {
+    grid-area: game;
     align-content: center;
     color: #2d3436;
-    background-color: #00cec9;
     margin: 20px;
-    width: 90%;
+    width: 100%;
     padding: 1em 1em 1em 1em;
 }
 
-.gameControls {
-    grid-area: game;
-    color: #2d3436;
-    background-color: #fd79a8;
-    width: 90%;
-    margin: 20px;
-    padding: 1em 1em 1em 1em;
-}
-
+/*
 .landing {
     width: 90%;
     background-color: #d63031;
@@ -62,7 +53,7 @@ h1 {
 
 .landing:active {
     opacity: 100%;
-}
+}*/
 
 .HowToPlay {
     grid-area: sidebar;
@@ -82,4 +73,8 @@ footer {
     grid-area: footer;
     color: #2d3436;
     background-color: #b2bec3;
+}
+
+footer > p {
+    text-align: center;
 }
