@@ -4,6 +4,7 @@ package main
 
 import (
     "github.com/gin-gonic/gin"
+    "github.com/gin-contrib/static"
     "fmt"
 )
 
@@ -102,9 +103,8 @@ func main() {
 
     // thanks to gin for not supporting advanced enough routing to do this
     // r.Static("/", "./assets")
-    r.Static("/index.html", "./assets/index.html")
-    r.Static("/css", "./assets/css")
-    r.Static("/js", "./assets/js")
+    r.Use(static.Serve("/", static.LocalFile("./assets", true)))
+    //r.Use(static.Serve("/css/styles.css", static.LocalFile("./assets/css/styles.css", true)))
 
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
