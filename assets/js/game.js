@@ -12,9 +12,13 @@ $(function() {
 
     // print to console on click
     c.addEventListener('click', function(event) {
-        var x = event.pageX - leftoffset;
-        var y = event.pageY - topoffset;
-        console.log("click event at (x: " + x + ", y: " + y + ")");
+        let x = event.pageX - leftoffset;
+        let y = event.pageY - topoffset;
+        console.log(`click event at (x: ${x}, y: ${y})`);
+
+        let territory = w.territoryIsClicked(x, y)
+        console.log(`territory clicked: ${territory}`)
+
     });
 
     // you can draw stuff to canvas with ctx

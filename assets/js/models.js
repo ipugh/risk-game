@@ -1,4 +1,7 @@
 console.debug("models.js file loaded");
+
+var territorySize = 10;
+
 // Territory object
 function Territory(x, y, id, surrounding=[], troops=0, player="") {
     this.x = x;
@@ -26,7 +29,6 @@ World.prototype.generateTerritories = function() {
 
 // Draw the world, territories and edges
 World.prototype.drawWorld = function(ctx) {
-    let territorySize = 10;
     for (let [id, territory] of Object.entries(this.territories)) {
         console.debug(territory)
 
@@ -48,4 +50,15 @@ World.prototype.drawWorld = function(ctx) {
             ctx.stroke();
         })
     }
+}
+
+// return id onclick, -1 if none clicked
+World.prototype.territoryIsClicked = function(x, y) {
+    let dist = (xa, ya, xb, yb) => Math.sqrt(((xa-xb)**2) + ((ya-yb)**2))
+    for (let [id, territory] of Object.entries(this.territories)) {
+        if (dist(x, y, territory.x, territory.y) <= territorySize) {
+            return id
+        }
+    }
+    return -1
 }
