@@ -47,9 +47,17 @@ type PickReinforce struct {
     TerritoryId int `json:"territoryid"`
 }
 
-// attack POST
+// attack POST received
 type Attack struct {
     From int `json:"from"`
     To int `json:"to"`
+}
+
+// attack POST returned 
+type AttackReturn struct {
+    Success bool `json:"success"`
+    Remaining int `json:"remaining"`
+    Attacking [3]int `json:"attacking"`
+    Defending [2]int `json:"defending"`
 }
 

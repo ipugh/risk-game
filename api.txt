@@ -5,7 +5,10 @@ API calls
 from: number (territory id)
 to: number (territory id)
 RETURN
+success - was the attack valid
 remaining - troops remaining
+attacking int[3] - attacking die rolls
+defending int[2] - defending die rolls
 
 
 # for reinforcing at beginning of turn
@@ -13,7 +16,7 @@ remaining - troops remaining
 territoryid: number (territory id)
 armies: number
 RETURN
-remaining - toops remaining
+remaining - troops remaining
 success
 
 

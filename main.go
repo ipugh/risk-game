@@ -75,10 +75,13 @@ func main() {
         } else {
             fmt.Println(attack)
 
-            c.JSON(200, gin.H{
-                "success": true,
-                "remaining": 100,
-            })
+            var attackreturn AttackReturn
+            attackreturn.Success = true
+            attackreturn.Remaining = 100
+            attackreturn.Attacking = [3]int{6,5,4}
+            attackreturn.Defending = [2]int{3,2}
+
+            c.JSON(200, attackreturn)
         }
     })
 
@@ -92,7 +95,7 @@ func main() {
         var p Player
         p.Name = "Isaac"
         p.Color = "00ff00"
-        board.Players = append(board.Players, p) 
+        board.Players = append(board.Players, p)
 
         // Add territories
         var a = Territory{"steve", 1, 1}
