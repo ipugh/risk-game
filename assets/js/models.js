@@ -3,17 +3,18 @@ console.debug("models.js file loaded");
 var territorySize = 10;
 
 // Territory object
-function Territory(x, y, id, surrounding=[], troops=0, player="") {
+function Territory(x, y, id, name="unnamed", surrounding=[], troops=0, player="") {
     this.x = x;
     this.y = y;
     this.id = id;
+    this.name = name;
     this.surrounding = surrounding;
     this.troops = troops;
     this.player = player;
 }
 
 Territory.prototype.toString = function() {
-    return `id: ${this.id}, (${this.x}, ${this.y}), surrounding: ${this.surrounding}, troops: ${this.troops}, player: ${this.player}`
+    return `name: ${this.name}, id: ${this.id}, (${this.x}, ${this.y}), surrounding: ${this.surrounding}, troops: ${this.troops}, player: ${this.player}`
 }
 
 // World object
@@ -23,8 +24,8 @@ function World() {
 
 // This is where the territories are created
 World.prototype.generateTerritories = function() {
-    this.territories[0] = new Territory(50, 50, 0, [1]);
-    this.territories[1] = new Territory(100, 100, 1, [0]);
+    this.territories[0] = new Territory(50, 50, 0, "Western United States", [1]);
+    this.territories[1] = new Territory(100, 100, 1, "Eastern United States", [0]);
 }
 
 // Draw the world, territories and edges
