@@ -17,7 +17,13 @@ $(function() {
         console.log(`click event at (x: ${x}, y: ${y})`);
 
         let territory = w.territoryIsClicked(x, y)
-        console.log(`territory clicked: ${territory}`)
+        console.log(`territory clicked: ${territory}`);
+
+        if (territory != -1) {
+            ctx.clearRect(0, 0, c.width, c.height);
+            w.drawWorld(ctx, territory);
+        }
+
 
     });
 

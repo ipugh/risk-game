@@ -29,7 +29,7 @@ World.prototype.generateTerritories = function() {
 }
 
 // Draw the world, territories and edges
-World.prototype.drawWorld = function(ctx) {
+World.prototype.drawWorld = function(ctx, highlight) {
     drawnEdges = {}
 
     // draw edges
@@ -62,11 +62,18 @@ World.prototype.drawWorld = function(ctx) {
     for (let [id, territory] of Object.entries(this.territories)) {
         console.debug(territory)
 
+        // TODO: look up player and set color
+        ctx.strokeStyle = "White"
+
         // draw the territory
         ctx.beginPath();
         ctx.arc(territory.x, territory.y, territorySize, 0, 2*Math.PI);
         ctx.fillStyle="Black"
         ctx.fill();
+
+        if (highlight != undefined && id == highlight) {
+            ctx.stroke();
+        }
     }
 }
 
