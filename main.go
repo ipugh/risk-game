@@ -84,10 +84,17 @@ func main() {
 
     api.GET("/board", func(c *gin.Context) {
         var board Gameboard
-        board.Turn = "steve"
+        board.Turn = "Isaac"
         board.Gamestate = "pick"
         board.Turnstate = "start"
 
+        // Add players
+        var p Player
+        p.Name = "Isaac"
+        p.Color = "00ff00"
+        board.Players = append(board.Players, p) 
+
+        // Add territories
         var a = Territory{"steve", 1, 1}
         var b = Territory{"steve", 1, 2}
         var w World

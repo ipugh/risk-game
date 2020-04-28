@@ -38,6 +38,10 @@ gameboard:
     turn: string
     gamestate: string
     turnstate: string
+    player[]:
+        name: string
+        color: string
+
 
 
 # for picking a territory during initial setup

@@ -6,6 +6,12 @@ type Gameboard struct {
     Turn string `json:"turn"`
     Gamestate string `json:"gamestate"`
     Turnstate string `json:"turnstate"`
+    Players []Player `json:"players"`
+}
+
+type Player struct {
+    Name string `json:"name"`
+    Color string `json:"color"`
 }
 
 type World struct {
