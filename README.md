@@ -7,8 +7,10 @@ This project uses these go modules.
 - `github.com/gin-contrib/static`
 - `github.com/gin-gonic/gin`
 
-`go get` these packages, then run `go run *.go` to run the server.
+`go get` these packages, then run `go run .` to run the server.
 
 ## TODO
-- each api call has lots of similar code, make it more generic
+- each backend api route has lots of similar code, make it more generic
+- do math on drawing edges between territories
+
 
