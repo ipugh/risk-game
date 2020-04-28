@@ -2,15 +2,22 @@
 <html>
 
 <head>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/game.js"></script>
+
+    <!-- links -->
+    <link rel="shortcut icon" type="image/x-icon" href="risk.ico" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+
     <title>Risk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Muli:900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <script src="js/game.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="risk.ico" />
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+
     <style>
         body {
             font-family: 'Alegreya SC';
@@ -35,7 +42,7 @@
 
 
     <div class="Game">
-        <canvas id="myCanvas" width="650" height="400" style="border:2px solid #000000;">
+        <canvas id="gameCanvas" width="650" height="400" style="border:2px solid #000000;">
         </canvas>
     </div>
     <div class="Controls">
