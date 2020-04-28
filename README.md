@@ -11,6 +11,5 @@ This project uses these go modules.
 
 ## TODO
 - each backend api route has lots of similar code, make it more generic
-- do math on drawing edges between territories
 
 

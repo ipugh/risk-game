@@ -30,26 +30,43 @@ World.prototype.generateTerritories = function() {
 
 // Draw the world, territories and edges
 World.prototype.drawWorld = function(ctx) {
+    drawnEdges = {}
+
+    // draw edges
+    for (let [id, territory] of Object.entries(this.territories)) {
+        territory.surrounding.forEach(e => {
+            // Check if edge is already drawn or not
+            let eHas = (drawnEdges[e] != undefined && drawnEdges[e].indexOf(id.toString()) != -1)
+            let idHas = (drawnEdges[id] != undefined && drawnEdges[id].indexOf(e.toString()) != -1)
+            if (!(eHas || idHas)) {
+                ctx.beginPath();
+
+                // draw edge from id to e
+                ctx.moveTo(territory.x, territory.y);
+                ex = this.territories[e].x;
+                ey = this.territories[e].y;
+                ctx.lineTo(ex, ey);
+                ctx.strokeStyle = "Red"
+                ctx.stroke();
+
+                // Add edge to drawn edges
+                if (drawnEdges[e] == undefined) {
+                    drawnEdges[e] = []
+                }
+                drawnEdges[e].push(id)
+            }
+        });
+    }
+
+    // draw territories
     for (let [id, territory] of Object.entries(this.territories)) {
         console.debug(territory)
 
         // draw the territory
         ctx.beginPath();
         ctx.arc(territory.x, territory.y, territorySize, 0, 2*Math.PI);
-        ctx.stroke();
-
-        // draw surrounding
-        // TODO: math so lines don't run into circles
-        territory.surrounding.forEach(e => {
-            ctx.beginPath();
-
-            // draw edge from id to e
-            ctx.moveTo(territory.x, territory.y);
-            ex = this.territories[e].x;
-            ey = this.territories[e].y;
-            ctx.lineTo(ex, ey);
-            ctx.stroke();
-        })
+        ctx.fillStyle="Black"
+        ctx.fill();
     }
 }
 
